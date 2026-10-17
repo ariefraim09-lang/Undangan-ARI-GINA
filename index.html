@@ -3,40 +3,53 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f8f3eb">
-  <title>Undangan Pernikahan Ari & Gina</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f4ed">
+  <title>Ari & Gina | Undangan Pernikahan</title>
+  <meta name="description" content="Undangan resepsi pernikahan Ari Efraim Ginting dan Gina Sonia Br Sembiring, 7 November 2026 di Berastagi.">
+
   <style>
+    :root {
+      --cream: #f8f4ed;
+      --gold: #b18b52;
+      --dark: #44372d;
+      --soft: #e9dfcf;
+      --white: #fffdf8;
+    }
+
     * { box-sizing: border-box; }
 
     html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      font-family: Georgia, 'Times New Roman', serif;
-      color: #574633;
-      background: #f8f3eb;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--dark);
+      background: var(--cream);
       text-align: center;
     }
 
+    button, a { -webkit-tap-highlight-color: transparent; }
+
     .hero {
-      min-height: 100vh;
+      min-height: 100svh;
+      padding: 35px 20px;
       display: flex;
-      align-items: center;
       justify-content: center;
-      padding: 35px 16px;
+      align-items: center;
       background:
-        linear-gradient(135deg, #f8f3eb, #e9dcc7, #f8f3eb);
+        radial-gradient(ellipse at top, #fffdf9, transparent 65%),
+        linear-gradient(145deg, #eee2ce, #faf7f0 55%, #e7d8c1);
     }
 
     .frame {
       width: 100%;
-      max-width: 500px;
+      max-width: 490px;
       padding: 42px 22px;
-      border: 1px solid #b69a69;
-      outline: 1px solid #b69a69;
+      border: 1px solid var(--gold);
+      outline: 1px solid var(--gold);
       outline-offset: 6px;
-      background: rgba(255, 252, 246, 0.65);
+      background: rgba(255,253,248,.76);
     }
 
     .eyebrow {
@@ -45,165 +58,307 @@
       text-transform: uppercase;
     }
 
-    h1 {
-      font-size: clamp(31px, 8vw, 43px);
-      font-weight: normal;
-      line-height: 1.25;
-      margin: 22px 0;
+    .ornament {
+      color: var(--gold);
+      font-size: 30px;
+      margin: 15px 0;
     }
 
-    .amp {
-      color: #ae8951;
+    h1 {
+      font-size: clamp(32px, 8vw, 45px);
+      line-height: 1.2;
+      font-weight: normal;
+      margin: 20px 0;
+    }
+
+    h2 {
+      font-weight: normal;
       font-size: 30px;
     }
 
-    p { line-height: 1.8; }
+    h3 {
+      font-weight: normal;
+      font-size: 23px;
+    }
+
+    p { line-height: 1.85; }
+
+    .gold { color: var(--gold); }
 
     .date {
-      margin: 25px 0;
-      font-size: 19px;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
+      font-size: 17px;
+      margin: 28px 0;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 15px;
-      padding: 13px 23px;
-      border: none;
-      border-radius: 25px;
-      background: #8b704c;
+      border: 0;
+      border-radius: 30px;
+      background: #806541;
       color: white;
-      font-family: Arial, sans-serif;
       text-decoration: none;
+      padding: 14px 23px;
+      margin: 8px 4px;
+      font: 14px Arial, sans-serif;
       cursor: pointer;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #705532;
+      border: 1px solid var(--gold);
     }
 
     section { padding: 65px 20px; }
 
-    h2 {
-      font-size: 29px;
+    .container {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .intro { max-width: 570px; margin: auto; }
+
+    .card {
+      max-width: 490px;
+      margin: 25px auto;
+      padding: 28px 21px;
+      background: var(--white);
+      border: 1px solid #d8c5a4;
+      border-radius: 4px;
+    }
+
+    .divider {
+      width: 75px;
+      height: 1px;
+      margin: 24px auto;
+      background: var(--gold);
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 25px auto;
+    }
+
+    .time-box {
+      min-width: 66px;
+      padding: 13px 7px;
+      border: 1px solid #d8c5a4;
+      background: var(--white);
+    }
+
+    .time-box strong {
+      display: block;
+      font-size: 25px;
       font-weight: normal;
     }
 
-    .gold { color: #a9854e; }
-
-    .card {
-      max-width: 500px;
-      margin: 25px auto;
-      padding: 27px 20px;
-      border: 1px solid #c6ae86;
-      background: #fffaf2;
-      border-radius: 5px;
-    }
-
-    .label {
-      font-size: 11px;
-      letter-spacing: 3px;
+    .time-box span {
+      font: 10px Arial, sans-serif;
       text-transform: uppercase;
     }
 
-    .address {
+    .location {
       overflow-wrap: anywhere;
+      font-size: 14px;
     }
 
     .closing {
-      background: #e9dcc7;
-      padding: 50px 20px;
+      background: var(--soft);
+      padding: 55px 20px;
     }
 
     footer {
-      padding: 20px;
+      padding: 22px;
       font-size: 12px;
+    }
+
+    .fade {
+      animation: appear 1.2s ease both;
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .fade { animation: none; }
     }
   </style>
 </head>
+
 <body>
 
-  <header class="hero">
-    <div class="frame">
-      <p class="eyebrow">Undangan Pernikahan</p>
-      <p>Dengan penuh rasa syukur dan kebahagiaan</p>
+  <header class="hero" id="home">
+    <div class="frame fade">
+      <p class="eyebrow">The Wedding Celebration</p>
+      <div class="ornament">❦</div>
+
+      <p>Dengan penuh rasa syukur dan kebahagiaan,</p>
       <p>kami mengundang Bapak/Ibu/Saudara/i</p>
-      <p>untuk menghadiri resepsi pernikahan kami</p>
+      <p>untuk hadir dalam resepsi pernikahan kami.</p>
 
-      <h1>Ari Efraim Ginting</h1>
-      <div class="amp">&</div>
-      <h1>Gina Sonia Br Sembiring</h1>
+      <h1>Ari Efraim<br>Ginting</h1>
+      <div class="ornament">&</div>
+      <h1>Gina Sonia<br>Br Sembiring</h1>
 
-      <p class="date">SABTU, 7 NOVEMBER 2026</p>
+      <div class="divider"></div>
+      <p class="date">SABTU · 07 · 11 · 2026</p>
 
       <button class="btn"
-        onclick="document.getElementById('cerita').scrollIntoView()">
+        onclick="document.getElementById('undangan').scrollIntoView({behavior:'smooth'})">
         Buka Undangan
       </button>
     </div>
   </header>
 
-  <section id="cerita">
-    <p class="eyebrow gold">Perjalanan Cinta Kami</p>
-    <h2>Hari Bahagia Kami</h2>
-    <p>
-      Dengan penuh rasa syukur kepada Tuhan Yang Maha Esa,
-      kami telah melangsungkan akad nikah pada:
-    </p>
+  <main>
+    <section id="undangan">
+      <div class="container">
+        <p class="eyebrow gold">Our Wedding</p>
+        <h2>Perjalanan Cinta Kami</h2>
+        <div class="divider"></div>
 
-    <div class="card">
-      <p class="label">Akad Nikah</p>
-      <h2>10 Oktober 2026</h2>
-      <p>Medan Serbajadi</p>
-      <p>Alhamdulillah, kami telah resmi menjadi suami istri.</p>
-    </div>
+        <p class="intro">
+          Dengan penuh rasa syukur kepada Tuhan Yang Maha Esa,
+          kami telah melangsungkan akad nikah dan kini ingin
+          berbagi kebahagiaan bersama keluarga, sahabat,
+          serta orang-orang terkasih.
+        </p>
 
-    <p>
-      Dengan penuh kebahagiaan, kami mengundang keluarga,
-      sahabat, dan kerabat untuk hadir dalam acara resepsi
-      pernikahan kami.
-    </p>
-  </section>
+        <div class="card">
+          <div class="ornament">♡</div>
+          <p class="eyebrow gold">Akad Nikah</p>
+          <h2>10 Oktober 2026</h2>
+          <p>Medan Serbajadi</p>
+          <div class="divider"></div>
+          <p>Alhamdulillah, kami telah resmi menjadi suami istri.</p>
+        </div>
+      </div>
+    </section>
 
-  <section id="resepsi">
-    <p class="eyebrow gold">Save the Date</p>
-    <h2>Resepsi Pernikahan</h2>
+    <section style="background:#f0e7d9" id="resepsi">
+      <div class="container">
+        <p class="eyebrow gold">Save The Date</p>
+        <h2>Resepsi Pernikahan</h2>
+        <div class="ornament">❦</div>
 
-    <div class="card">
-      <p class="label">Hari dan Tanggal</p>
-      <h2>Sabtu</h2>
-      <p class="date">7 November 2026</p>
+        <h3>Sabtu</h3>
+        <h2 class="gold">7 November 2026</h2>
+        <p>Menuju hari bahagia kami</p>
 
-      <p class="label">Waktu</p>
-      <p>Waktu acara akan diinformasikan</p>
+        <div class="countdown">
+          <div class="time-box">
+            <strong id="days">--</strong><span>Hari</span>
+          </div>
+          <div class="time-box">
+            <strong id="hours">--</strong><span>Jam</span>
+          </div>
+          <div class="time-box">
+            <strong id="minutes">--</strong><span>Menit</span>
+          </div>
+          <div class="time-box">
+            <strong id="seconds">--</strong><span>Detik</span>
+          </div>
+        </div>
 
-      <hr style="border:0;border-top:1px solid #d9c7a8;margin:25px 0">
+        <div class="card">
+          <p class="eyebrow gold">Lokasi Acara</p>
+          <h2>Berastagi</h2>
+          <p class="location">
+            5GP4+RHX, Jl. Udara Ujung-Berastagi,
+            Gundaling II, Kecamatan Berastagi,
+            Kabupaten Karo, Sumatera Utara 22152
+          </p>
 
-      <p class="label">Tempat Acara</p>
-      <h2>Berastagi</h2>
-      <p class="address">
-        5GP4+RHX, Jl. Udara Ujung-Berastagi,
-        Gundaling II, Kecamatan Berastagi,
-        Kabupaten Karo, Sumatera Utara 22152
-      </p>
+          <p><strong>Waktu acara</strong><br>
+          Akan diinformasikan</p>
 
-      <a class="btn"
-        href="https://www.google.com/maps/search/?api=1&query=5GP4%2BRHX%2C%20Jl.%20Udara%20Ujung-Berastagi%2C%20Gundaling%20II%2C%20Berastagi%2C%20Kabupaten%20Karo%2C%20Sumatera%20Utara%2022152"
-        target="_blank" rel="noopener">
-        Buka Lokasi Google Maps
-      </a>
-    </div>
-  </section>
+          <a class="btn"
+            href="https://www.google.com/maps/search/?api=1&query=5GP4%2BRHX%2C%20Jl.%20Udara%20Ujung-Berastagi%2C%20Gundaling%20II%2C%20Berastagi%2C%20Kabupaten%20Karo%2C%20Sumatera%20Utara%2022152"
+            target="_blank" rel="noopener">
+            Buka Google Maps
+          </a>
+        </div>
+      </div>
+    </section>
 
-  <section class="closing">
-    <h2>Merupakan Kehormatan bagi Kami</h2>
-    <p>
-      Kehadiran dan doa restu Bapak/Ibu/Saudara/i
-      merupakan kebahagiaan bagi kami.
-    </p>
-    <p>Terima kasih atas doa dan restunya.</p>
-    <h2 class="gold">Ari & Gina</h2>
-  </section>
+    <section id="rsvp">
+      <div class="container">
+        <p class="eyebrow gold">RSVP</p>
+        <h2>Konfirmasi Kehadiran</h2>
+        <p>
+          Kami akan sangat berbahagia apabila Anda
+          berkenan hadir di hari istimewa kami.
+        </p>
+
+        <div class="card">
+          <p>Silakan konfirmasi kehadiran melalui WhatsApp.</p>
+          <a class="btn"
+            href="https://wa.me/62NOMORWHATSAPP?text=Halo%20Ari%20dan%20Gina%2C%20saya%20ingin%20mengonfirmasi%20kehadiran%20di%20acara%20resepsi%20pernikahan."
+            target="_blank" rel="noopener">
+            Konfirmasi via WhatsApp
+          </a>
+          <p style="font-size:12px">
+            Tombol WhatsApp perlu diperbarui dengan nomor penerima.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="container">
+        <div class="ornament">♡</div>
+        <h2>Merupakan Kebahagiaan bagi Kami</h2>
+        <p>
+          Kehadiran dan doa restu Bapak/Ibu/Saudara/i
+          merupakan anugerah dan kebahagiaan bagi kami.
+        </p>
+        <p>Terima kasih atas perhatian dan doa restunya.</p>
+        <h2 class="gold">Ari & Gina</h2>
+        <div class="divider"></div>
+        <p>Sabtu, 7 November 2026 · Berastagi</p>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    Undangan Pernikahan Ari & Gina · 2026
+    With love, Ari & Gina · 2026
   </footer>
 
+  <script>
+    // Hitung mundur menuju 7 November 2026.
+    // Jam acara dapat disesuaikan setelah ditentukan.
+    const target = new Date(2026, 10, 7, 0, 0, 0).getTime();
+
+    function updateCountdown() {
+      const now = Date.now();
+      const difference = target - now;
+
+      if (difference <= 0) {
+        document.getElementById("days").textContent = "0";
+        document.getElementById("hours").textContent = "0";
+        document.getElementById("minutes").textContent = "0";
+        document.getElementById("seconds").textContent = "0";
+        return;
+      }
+
+      document.getElementById("days").textContent =
+        Math.floor(difference / 86400000);
+      document.getElementById("hours").textContent =
+        Math.floor((difference % 86400000) / 3600000);
+      document.getElementById("minutes").textContent =
+        Math.floor((difference % 3600000) / 60000);
+      document.getElementById("seconds").textContent =
+        Math.floor((difference % 60000) / 1000);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
 </body>
 </html>
