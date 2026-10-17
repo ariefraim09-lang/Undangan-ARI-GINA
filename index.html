@@ -319,6 +319,91 @@ footer {
     padding-right: 18px;
   }
 }
+   
+/* Bagian rekening hadiah */
+.rekening-section {
+  padding: 65px 20px;
+  background: #f8f0eb;
+  color: #261414;
+  text-align: center;
+}
+
+.rekening-container {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.rekening-label {
+  color: #790f20;
+  letter-spacing: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.rekening-section h2 {
+  color: #790f20;
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+.rekening-desc {
+  line-height: 1.8;
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+.rekening-card {
+  background: #fffaf5;
+  border: 1px solid #d4af57;
+  border-radius: 14px;
+  padding: 25px 18px;
+  margin: 18px 0;
+  box-shadow: 0 5px 18px rgba(38, 20, 20, 0.08);
+}
+
+.rekening-bank {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.mandiri {
+  background: #003d79;
+}
+
+.bni {
+  background: #e87524;
+}
+
+.rekening-nama {
+  font-weight: bold;
+  margin-top: 22px;
+}
+
+.rekening-nomor {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  overflow-wrap: anywhere;
+}
+
+.rekening-copy {
+  background: #790f20;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 22px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.rekening-copy:hover {
+  background: #261414;
+}
+
 </style>
    
 </head>
@@ -404,7 +489,7 @@ footer {
         <p style="margin:0">dan</p>
         <p><strong>Gina Sonia Br Sembiring</strong></p>
         <p>Sabtu, 7 November 2026</p>
-        <p>Waktu acara akan diinformasikan kemudian.</p>
+        <p>Waktu acara 09:00 - Selesai .</p>
       </div>
     </section>
 
@@ -415,10 +500,16 @@ footer {
       <p>Sepenggal kisah menuju perjalanan baru kami.</p>
       <div class="gallery">
         <img src="HD103082%20copy%20(1).jpg" alt="Kenangan Ari dan Gina" loading="lazy">
-        <img src="HD103082%20copy%20(1).jpg" alt="Foto Ari dan Gina" loading="lazy">
-        <img src="HD103082%20copy%20(1).jpg" alt="Momen bahagia Ari dan Gina" loading="lazy">
+        <img src="HD102803%20copy%20(1).jpg" alt="Foto Ari dan Gina" loading="lazy">
+        <img src="HD103183%20copy%20(1).jpg" alt="Foto Ari dan Gina" loading="lazy">
+        <img src="HD103259%20copy%20(1).jpg" alt="Foto Ari dan Gina" loading="lazy">
+        <img src="HD103310%20copy%20(1).jpg" alt="Foto Ari dan Gina" loading="lazy">
+        <img src="HD103316%20copy%20(1).jpg" alt="Foto Ari dan Gina" loading="lazy">
+        <img src="HD103422%20copy%20(1).jpg" alt="Foto Ari dan Gina" loading="lazy">
+        <img src="HD103434%20copy%20(1).jpg" alt="Foto Ari dan Gina" loading="lazy">
+        <img src="HD102945%20copy%20(1).jpg" alt="Momen bahagia Ari dan Gina" loading="lazy">
       </div>
-      <p style="font-size:12px">Untuk saat ini foto yang sama digunakan sebagai contoh. Foto lain bisa ditambahkan nanti.</p>
+      <p style="font-size:12px">.</p>
     </section>
 
     <!-- LOKASI -->
@@ -440,6 +531,41 @@ footer {
         >Buka Google Maps ↗</a>
       </div>
     </section>
+     
+<section id="rekening" class="rekening-section">
+  <div class="rekening-container">
+    <p class="rekening-label">TANDA KASIH</p>
+    <h2>Amplop Digital</h2>
+    <p class="rekening-desc">
+      Doa dan kehadiran Anda merupakan hadiah terindah bagi kami.
+      Jika ingin memberikan tanda kasih, dapat melalui rekening berikut.
+    </p>
+
+    <div class="rekening-card">
+      <div class="rekening-bank mandiri">MANDIRI</div>
+      <p class="rekening-nama">ARIEFRAIM GINTING</p>
+      <p class="rekening-nomor" id="nomorMandiri">
+        1310019025321
+      </p>
+      <button class="rekening-copy"
+        onclick="salinRekening('1310019025321')">
+        Salin Nomor Rekening
+      </button>
+    </div>
+
+    <div class="rekening-card">
+      <div class="rekening-bank bni">BNI</div>
+      <p class="rekening-nama">Gina Sonia</p>
+      <p class="rekening-nomor" id="nomorBNI">
+        0804234946
+      </p>
+      <button class="rekening-copy"
+        onclick="salinRekening('0804234946')">
+        Salin Nomor Rekening
+      </button>
+    </div>
+  </div>
+</section>  
 
     <!-- KONFIRMASI -->
     <section class="section rsvp reveal">
@@ -590,6 +716,38 @@ footer {
     rsvpButton.href =
       "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(rsvpText);
   });
+</script><script>
+function salinRekening(nomor) {
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(nomor)
+      .then(function() {
+        alert("Nomor rekening berhasil disalin: " + nomor);
+      })
+      .catch(function() {
+        salinManual(nomor);
+      });
+  } else {
+    salinManual(nomor);
+  }
+}
+
+function salinManual(nomor) {
+  var area = document.createElement("textarea");
+  area.value = nomor;
+  area.style.position = "fixed";
+  area.style.opacity = "0";
+  document.body.appendChild(area);
+  area.select();
+
+  try {
+    document.execCommand("copy");
+    alert("Nomor rekening berhasil disalin: " + nomor);
+  } catch (e) {
+    alert("Silakan salin nomor rekening ini: " + nomor);
+  }
+
+  document.body.removeChild(area);
+}
 </script>
 </body>
 </html>
