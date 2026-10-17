@@ -263,23 +263,61 @@ footer {
   }
 }
 
-.rumah-karo {
-  position: absolute;
-  top: 18px;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  z-index: 2;
-  pointer-events: none;
+
+/* Ornamen pinggir khas Karo */
+.cover {
+  position: relative;
+  overflow: hidden;
 }
 
-.rumah-karo img {
-  width: min(85%, 320px);
-  max-height: 125px;
-  object-fit: contain;
-  object-position: center top;
-  opacity: 0.9;
+.karo-border {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 38px;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.95;
+  background-color: #790f20;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0 8px,
+      #d4af57 8px 11px,
+      transparent 11px 16px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0 8px,
+      #fffaf5 8px 10px,
+      transparent 10px 16px
+    );
+  border-left: 3px solid #d4af57;
+  border-right: 3px solid #211416;
+}
+
+.karo-border.left {
+  left: 0;
+}
+
+.karo-border.right {
+  right: 0;
+}
+
+.cover-inner {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 480px) {
+  .karo-border {
+    width: 20px;
+  }
+
+  .cover-inner {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
 }
 </style>
    
@@ -290,11 +328,10 @@ footer {
 
   <!-- HALAMAN PEMBUKA -->
 <header class="cover" id="cover">
-  <div class="rumah-karo">
-    <img src="Bisa_Junisa_Munthe-Rumah_adat_Karo.jpg" alt="Rumah Adat Karo">
-  </div>
-    <div class="cover-inner">
-        <!-- Isi undangan yang sudah ada tetap di sini -->
+  <div class="karo-border left"></div>
+  <div class="karo-border right"></div>
+  <div class="cover-inner">
+    <!-- Isi undangan lama tetap di sini -->
   </div>
 </header>
   <div class="cover-inner">
