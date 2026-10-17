@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f3eb">
+  <title>Undangan Pernikahan Ari & Gina</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, 'Times New Roman', serif;
+      color: #574633;
+      background: #f8f3eb;
+      text-align: center;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 35px 16px;
+      background:
+        linear-gradient(135deg, #f8f3eb, #e9dcc7, #f8f3eb);
+    }
+
+    .frame {
+      width: 100%;
+      max-width: 500px;
+      padding: 42px 22px;
+      border: 1px solid #b69a69;
+      outline: 1px solid #b69a69;
+      outline-offset: 6px;
+      background: rgba(255, 252, 246, 0.65);
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(31px, 8vw, 43px);
+      font-weight: normal;
+      line-height: 1.25;
+      margin: 22px 0;
+    }
+
+    .amp {
+      color: #ae8951;
+      font-size: 30px;
+    }
+
+    p { line-height: 1.8; }
+
+    .date {
+      margin: 25px 0;
+      font-size: 19px;
+      letter-spacing: 2px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 13px 23px;
+      border: none;
+      border-radius: 25px;
+      background: #8b704c;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    section { padding: 65px 20px; }
+
+    h2 {
+      font-size: 29px;
+      font-weight: normal;
+    }
+
+    .gold { color: #a9854e; }
+
+    .card {
+      max-width: 500px;
+      margin: 25px auto;
+      padding: 27px 20px;
+      border: 1px solid #c6ae86;
+      background: #fffaf2;
+      border-radius: 5px;
+    }
+
+    .label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .address {
+      overflow-wrap: anywhere;
+    }
+
+    .closing {
+      background: #e9dcc7;
+      padding: 50px 20px;
+    }
+
+    footer {
+      padding: 20px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="frame">
+      <p class="eyebrow">Undangan Pernikahan</p>
+      <p>Dengan penuh rasa syukur dan kebahagiaan</p>
+      <p>kami mengundang Bapak/Ibu/Saudara/i</p>
+      <p>untuk menghadiri resepsi pernikahan kami</p>
+
+      <h1>Ari Efraim Ginting</h1>
+      <div class="amp">&</div>
+      <h1>Gina Sonia Br Sembiring</h1>
+
+      <p class="date">SABTU, 7 NOVEMBER 2026</p>
+
+      <button class="btn"
+        onclick="document.getElementById('cerita').scrollIntoView()">
+        Buka Undangan
+      </button>
+    </div>
+  </header>
+
+  <section id="cerita">
+    <p class="eyebrow gold">Perjalanan Cinta Kami</p>
+    <h2>Hari Bahagia Kami</h2>
+    <p>
+      Dengan penuh rasa syukur kepada Tuhan Yang Maha Esa,
+      kami telah melangsungkan akad nikah pada:
+    </p>
+
+    <div class="card">
+      <p class="label">Akad Nikah</p>
+      <h2>10 Oktober 2026</h2>
+      <p>Medan Serbajadi</p>
+      <p>Alhamdulillah, kami telah resmi menjadi suami istri.</p>
+    </div>
+
+    <p>
+      Dengan penuh kebahagiaan, kami mengundang keluarga,
+      sahabat, dan kerabat untuk hadir dalam acara resepsi
+      pernikahan kami.
+    </p>
+  </section>
+
+  <section id="resepsi">
+    <p class="eyebrow gold">Save the Date</p>
+    <h2>Resepsi Pernikahan</h2>
+
+    <div class="card">
+      <p class="label">Hari dan Tanggal</p>
+      <h2>Sabtu</h2>
+      <p class="date">7 November 2026</p>
+
+      <p class="label">Waktu</p>
+      <p>Waktu acara akan diinformasikan</p>
+
+      <hr style="border:0;border-top:1px solid #d9c7a8;margin:25px 0">
+
+      <p class="label">Tempat Acara</p>
+      <h2>Berastagi</h2>
+      <p class="address">
+        5GP4+RHX, Jl. Udara Ujung-Berastagi,
+        Gundaling II, Kecamatan Berastagi,
+        Kabupaten Karo, Sumatera Utara 22152
+      </p>
+
+      <a class="btn"
+        href="https://www.google.com/maps/search/?api=1&query=5GP4%2BRHX%2C%20Jl.%20Udara%20Ujung-Berastagi%2C%20Gundaling%20II%2C%20Berastagi%2C%20Kabupaten%20Karo%2C%20Sumatera%20Utara%2022152"
+        target="_blank" rel="noopener">
+        Buka Lokasi Google Maps
+      </a>
+    </div>
+  </section>
+
+  <section class="closing">
+    <h2>Merupakan Kehormatan bagi Kami</h2>
+    <p>
+      Kehadiran dan doa restu Bapak/Ibu/Saudara/i
+      merupakan kebahagiaan bagi kami.
+    </p>
+    <p>Terima kasih atas doa dan restunya.</p>
+    <h2 class="gold">Ari & Gina</h2>
+  </section>
+
+  <footer>
+    Undangan Pernikahan Ari & Gina · 2026
+  </footer>
+
+</body>
+</html>
