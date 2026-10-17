@@ -1,32 +1,40 @@
 
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#253d32">
-<title>Undangan Ari & Gina</title>
-
-<style>
 :root {
-   --cream: #f8f0eb;
+  --cream: #f8f0eb;
   --gold: #d4af57;
   --dark: #261414;
   --soft: #ead8d0;
   --white: #fffaf5;
   --maroon: #790f20;
   --black: #211416;
+  --green: #790f20;
+  --ink: #261414;
 }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  background: #18231d;
+  background: var(--black);
   color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
 }
-button, a { -webkit-tap-highlight-color: transparent; }
-button { font: inherit; }
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
 .page {
   width: 100%;
   max-width: 480px;
@@ -36,15 +44,17 @@ button { font: inherit; }
   box-shadow: 0 0 45px #0005;
 }
 
+/* SAMPUL UNDANGAN */
 .cover {
   min-height: 100svh;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 25px;
+  padding: 48px 30px;
   text-align: center;
   color: white;
+  overflow: hidden;
   background:
     linear-gradient(
       180deg,
@@ -53,39 +63,49 @@ button { font: inherit; }
     ),
     url("HD103082%20copy%20(1).jpg") center/cover no-repeat,
     var(--maroon);
-  border: 5px solid #d4af57;
+  border: 5px solid var(--gold);
   box-shadow: inset 0 0 0 8px rgba(212, 175, 87, 0.22);
 }
+
 .cover-inner {
+  position: relative;
+  z-index: 2;
   width: 100%;
+  max-width: 390px;
   padding: 30px 15px;
   border: 1px solid #d4bb83;
   outline: 1px solid #d4bb8366;
   outline-offset: 7px;
   animation: appear 1.2s ease both;
 }
+
 .eyebrow {
   font: 11px Arial, sans-serif;
   letter-spacing: 4px;
   text-transform: uppercase;
 }
+
 .cover h1 {
-  font-size: clamp(38px, 10vw, 53px);
+  font-size: clamp(36px, 10vw, 53px);
   line-height: 1.12;
   font-weight: normal;
   margin: 25px 0 12px;
 }
+
 .amp {
   color: #e1c58a;
   font-style: italic;
   font-size: 35px;
   margin: 8px;
 }
+
 .cover-date {
   letter-spacing: 2px;
   font-size: 14px;
   margin: 22px 0;
 }
+
+/* TOMBOL */
 .btn {
   display: inline-flex;
   justify-content: center;
@@ -95,40 +115,95 @@ button { font: inherit; }
   margin: 7px 3px;
   border: 1px solid var(--gold);
   border-radius: 30px;
-  background: var(--green);
+  background: var(--maroon);
   color: white;
   text-decoration: none;
   font: 13px Arial, sans-serif;
   cursor: pointer;
   transition: transform .25s, background .25s;
 }
-.btn:active { transform: scale(.96); }
-.btn.light { background: var(--cream); color: var(--green); }
+
+.btn:active {
+  transform: scale(.96);
+}
+
+.btn.light {
+  background: var(--cream);
+  color: var(--maroon);
+}
+
+/* ORNAMEN PINGGIR GEOMETRIS KARO */
+.karo-border {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 25px;
+  z-index: 3;
+  pointer-events: none;
+  opacity: .95;
+  background-color: var(--maroon);
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0 7px,
+      var(--gold) 7px 10px,
+      transparent 10px 15px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0 7px,
+      var(--white) 7px 9px,
+      transparent 9px 15px
+    );
+  border-left: 2px solid var(--gold);
+  border-right: 2px solid var(--black);
+}
+
+.karo-border.left {
+  left: 0;
+}
+
+.karo-border.right {
+  right: 0;
+}
+
+/* BAGIAN UMUM */
 .section {
   padding: 62px 23px;
   text-align: center;
   position: relative;
 }
-.section:nth-child(odd) { background: #f0eadc; }
+
+.section:nth-child(odd) {
+  background: #f0eadc;
+}
+
 .kicker {
   color: #927849;
   font: 10px Arial, sans-serif;
   letter-spacing: 4px;
   text-transform: uppercase;
 }
+
 h2 {
-  color: var(--green);
+  color: var(--maroon);
   font-size: 33px;
   font-weight: normal;
   line-height: 1.2;
   margin: 14px 0 20px;
 }
-p { line-height: 1.85; }
+
+p {
+  line-height: 1.85;
+}
+
 .ornament {
   font-size: 27px;
   color: var(--gold);
   margin: 12px 0;
 }
+
+/* FOTO UTAMA */
 .intro-photo {
   width: 100%;
   max-width: 320px;
@@ -141,6 +216,8 @@ p { line-height: 1.85; }
   margin: 20px auto;
   display: block;
 }
+
+/* KARTU ACARA */
 .card {
   padding: 25px 18px;
   margin: 18px 0;
@@ -148,40 +225,49 @@ p { line-height: 1.85; }
   border-radius: 14px;
   background: #fffdf8;
 }
+
 .card h3 {
   color: #927849;
   font-size: 23px;
   font-weight: normal;
   margin: 6px 0 15px;
 }
+
+/* HITUNG MUNDUR */
 .countdown {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 7px;
   margin: 24px 0;
 }
+
 .timebox {
-  background: var(--green);
+  background: var(--maroon);
   color: white;
   border-radius: 9px;
   padding: 14px 2px;
 }
+
 .timebox strong {
   display: block;
   font: 25px Arial, sans-serif;
   color: #e8d3a3;
 }
+
 .timebox span {
   font: 10px Arial, sans-serif;
   display: block;
   margin-top: 6px;
 }
+
+/* GALERI FOTO */
 .gallery {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
   margin-top: 24px;
 }
+
 .gallery img {
   width: 100%;
   height: 220px;
@@ -190,141 +276,42 @@ p { line-height: 1.85; }
   border: 1px solid #d6c7a8;
   background: #e8e0d1;
 }
+
 .gallery img:first-child {
   grid-column: 1 / -1;
   height: 330px;
 }
+
+/* LOKASI */
 .map-box {
   background: #e6e0d1;
   border-radius: 14px;
   padding: 22px 12px;
 }
-.map-box p { font-size: 14px; }
+
+.map-box p {
+  font-size: 14px;
+}
+
+/* KONFIRMASI KEHADIRAN */
 .rsvp {
-  background: var(--green);
+  background: var(--maroon);
   color: white;
 }
-.rsvp h2 { color: #f0d8a5; }
-.rsvp .kicker { color: #dfc58f; }
-footer {
-  padding: 35px 20px;
-  text-align: center;
-  color: var(--green);
-  background: #e7decb;
-}
-.music-btn {
-  position: fixed;
-  z-index: 10;
-  right: max(15px, calc((100vw - 450px)/2));
-  bottom: 20px;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 1px solid var(--gold);
-  background: var(--green);
-  color: white;
-  font-size: 21px;
-  cursor: pointer;
-  box-shadow: 0 3px 15px #0003;
-}
-.music-btn.playing { animation: spin 5s linear infinite; }
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity .8s ease, transform .8s ease;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.heart {
-  position: absolute;
-  bottom: 0;
-  left: var(--left);
-  color: #c5a66c;
-  pointer-events: none;
-  animation: floatUp 5s linear forwards;
-}
-@keyframes appear {
-  from { opacity: 0; transform: translateY(18px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes spin { to { transform: rotate(360deg); } }
-@keyframes floatUp {
-  from { transform: translateY(0) rotate(0); opacity: 0; }
-  15% { opacity: .8; }
-  to { transform: translateY(-90vh) rotate(45deg); opacity: 0; }
-}
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: .01ms !important;
-    transition-duration: .01ms !important;
-    scroll-behavior: auto !important;
-  }
+
+.rsvp h2 {
+  color: #f0d8a5;
 }
 
-
-/* Ornamen pinggir khas Karo */
-.cover {
-  position: relative;
-  overflow: hidden;
+.rsvp .kicker {
+  color: #dfc58f;
 }
 
-.karo-border {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 38px;
-  z-index: 3;
-  pointer-events: none;
-  opacity: 0.95;
-  background-color: #790f20;
-  background-image:
-    repeating-linear-gradient(
-      45deg,
-      transparent 0 8px,
-      #d4af57 8px 11px,
-      transparent 11px 16px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      transparent 0 8px,
-      #fffaf5 8px 10px,
-      transparent 10px 16px
-    );
-  border-left: 3px solid #d4af57;
-  border-right: 3px solid #211416;
-}
-
-.karo-border.left {
-  left: 0;
-}
-
-.karo-border.right {
-  right: 0;
-}
-
-.cover-inner {
-  position: relative;
-  z-index: 2;
-}
-
-@media (max-width: 480px) {
-  .karo-border {
-    width: 20px;
-  }
-
-  .cover-inner {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
-}
-   
-/* Bagian rekening hadiah */
+/* REKENING HADIAH */
 .rekening-section {
   padding: 65px 20px;
-  background: #f8f0eb;
-  color: #261414;
+  background: var(--cream);
+  color: var(--dark);
   text-align: center;
 }
 
@@ -334,14 +321,14 @@ footer {
 }
 
 .rekening-label {
-  color: #790f20;
+  color: var(--maroon);
   letter-spacing: 4px;
   font-size: 12px;
   font-weight: bold;
 }
 
 .rekening-section h2 {
-  color: #790f20;
+  color: var(--maroon);
   font-size: 30px;
   margin: 10px 0;
 }
@@ -353,8 +340,8 @@ footer {
 }
 
 .rekening-card {
-  background: #fffaf5;
-  border: 1px solid #d4af57;
+  background: var(--white);
+  border: 1px solid var(--gold);
   border-radius: 14px;
   padding: 25px 18px;
   margin: 18px 0;
@@ -391,7 +378,7 @@ footer {
 }
 
 .rekening-copy {
-  background: #790f20;
+  background: var(--maroon);
   color: white;
   border: none;
   border-radius: 25px;
@@ -401,353 +388,124 @@ footer {
 }
 
 .rekening-copy:hover {
-  background: #261414;
+  background: var(--dark);
 }
 
-</style>
-   
-</head>
+/* FOOTER */
+footer {
+  padding: 35px 20px;
+  text-align: center;
+  color: var(--maroon);
+  background: #e7decb;
+}
 
-<body>
-<main class="page">
+/* TOMBOL MUSIK */
+.music-btn {
+  position: fixed;
+  z-index: 10;
+  right: max(15px, calc((100vw - 450px) / 2));
+  bottom: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  background: var(--maroon);
+  color: white;
+  font-size: 21px;
+  cursor: pointer;
+  box-shadow: 0 3px 15px #0003;
+}
 
-  <!-- HALAMAN PEMBUKA -->
-<header class="cover" id="cover">
-  <div class="karo-border left"></div>
-  <div class="karo-border right"></div>
-  <div class="cover-inner">
-    <!-- Isi undangan lama tetap di sini -->
-  </div>
-</header>
-  <div class="cover-inner">
-     <div class="rumah-karo">
-    <img src="Bisa_Junisa_Munthe-Rumah_adat_Karo.jpg" alt="Rumah Adat Karo">
-  </div>
+.music-btn.playing {
+  animation: spin 5s linear infinite;
+}
 
-  <div class="cover-inner">
-    <!-- Isi undangan lama tetap di sini -->
-  </div>
-</header>
-    <div class="cover-inner">
-      <div class="eyebrow">The Wedding Of</div>
-      <h1>Ari Efraim<br>Ginting</h1>
-      <div class="amp">&</div>
-      <h1>Gina Sonia<br><span style="font-size:.68em">Br Sembiring</span></h1>
-      <div class="ornament">❦ ✧ ❦</div>
-      <p class="cover-date">SABTU, 7 NOVEMBER 2026</p>
-      <p style="font-size:13px">Kepada Bapak/Ibu/Saudara/i</p>
-      <p style="font-size:13px">Dengan penuh sukacita kami mengundang Anda</p>
-      <button class="btn light" id="openInvite">✉ Buka Undangan</button>
-    </div>
-  </header>
+/* ANIMASI */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .8s ease, transform .8s ease;
+}
 
-  <!-- ISI UNDANGAN -->
-  <div id="invitation" hidden>
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    <section class="section">
-      <div class="ornament">❦</div>
-      <p class="kicker">Dengan penuh rasa syukur</p>
-      <h2>Assalamu'alaikum<br>Warahmatullahi Wabarakatuh</h2>
-      <p>
-        Dengan memohon rahmat dan ridho Allah SWT,
-        kami bermaksud mengundang Bapak/Ibu, keluarga,
-        dan sahabat untuk menghadiri resepsi pernikahan kami.
-      </p>
-      <img
-        class="intro-photo"
-        src="HD103082%20copy%20(1).jpg"
-        alt="Foto Ari Efraim Ginting dan Gina Sonia Br Sembiring"
-        loading="lazy"
-      >
-      <h2 style="font-size:29px">Ari & Gina</h2>
-      <p>Merupakan kebahagiaan bagi kami untuk berbagi hari istimewa ini bersama Anda.</p>
-      <div class="ornament">✧ ❦ ✧</div>
-    </section>
+.heart {
+  position: absolute;
+  bottom: 0;
+  left: var(--left);
+  color: #c5a66c;
+  pointer-events: none;
+  animation: floatUp 5s linear forwards;
+}
 
-    <!-- HITUNG MUNDUR -->
-    <section class="section reveal">
-      <p class="kicker">Save The Date</p>
-      <h2>Menuju Hari Bahagia</h2>
-      <p>Sabtu, 7 November 2026</p>
-      <div class="countdown" id="countdown">
-        <div class="timebox"><strong id="days">0</strong><span>HARI</span></div>
-        <div class="timebox"><strong id="hours">0</strong><span>JAM</span></div>
-        <div class="timebox"><strong id="minutes">0</strong><span>MENIT</span></div>
-        <div class="timebox"><strong id="seconds">0</strong><span>DETIK</span></div>
-      </div>
-      <div class="ornament">❦</div>
-    </section>
-
-    <!-- DETAIL ACARA -->
-    <section class="section reveal" id="acara">
-      <p class="kicker">Wedding Celebration</p>
-      <h2>Detail Acara</h2>
-      <div class="card">
-        <div class="ornament">✧</div>
-        <h3>Resepsi Pernikahan</h3>
-        <p><strong>Ari Efraim Ginting</strong></p>
-        <p style="margin:0">dan</p>
-        <p><strong>Gina Sonia Br Sembiring</strong></p>
-        <p>Sabtu, 7 November 2026</p>
-        <p>Waktu acara 09:00 - Selesai .</p>
-      </div>
-    </section>
-
-    <!-- GALERI FOTO -->
-    <section class="section reveal">
-      <p class="kicker">Our Memories</p>
-      <h2>Galeri Kami</h2>
-      <p>Sepenggal kisah menuju perjalanan baru kami.</p>
-      <div class="gallery">
-        <img src="HD103082%20copy%20(1).jpg" alt="Kenangan Ari dan Gina" loading="lazy">
-        <img src="HD102803%20copy%20(1).jpg" alt="Foto Ari dan Gina" loading="lazy">
-        <img src="HD103183%20copy%20(1).jpg" alt="Foto Ari dan Gina" loading="lazy">
-        <img src="HD103259%20copy%20(1).jpg" alt="Foto Ari dan Gina" loading="lazy">
-        <img src="HD103310%20copy%20(1).jpg" alt="Foto Ari dan Gina" loading="lazy">
-        <img src="HD103316%20copy%20(1).jpg" alt="Foto Ari dan Gina" loading="lazy">
-        <img src="HD103422%20copy%20(1).jpg" alt="Foto Ari dan Gina" loading="lazy">
-        <img src="HD103434%20copy%20(1).jpg" alt="Foto Ari dan Gina" loading="lazy">
-        <img src="HD102945%20copy%20(1).jpg" alt="Momen bahagia Ari dan Gina" loading="lazy">
-      </div>
-      <p style="font-size:12px">.</p>
-    </section>
-
-    <!-- LOKASI -->
-    <section class="section reveal">
-      <p class="kicker">Come & Celebrate</p>
-      <h2>Lokasi Acara</h2>
-      <div class="map-box">
-        <div class="ornament">⌖</div>
-        <p><strong>Berastagi, Kabupaten Karo</strong></p>
-        <p>
-          5GP4+RHX, Jl. Udara Ujung-Berastagi,<br>
-          Gundaling II, Kecamatan Berastagi,<br>
-          Kabupaten Karo, Sumatera Utara 22152
-        </p>
-        <a
-          class="btn"
-          href="https://www.google.com/maps/search/?api=1&query=5GP4%2BRHX%2C%20Jl.%20Udara%20Ujung-Berastagi%2C%20Gundaling%20II%2C%20Berastagi%2C%20Sumatera%20Utara"
-          target="_blank" rel="noopener"
-        >Buka Google Maps ↗</a>
-      </div>
-    </section>
-     
-<section id="rekening" class="rekening-section">
-  <div class="rekening-container">
-    <p class="rekening-label">TANDA KASIH</p>
-    <h2>Amplop Digital</h2>
-    <p class="rekening-desc">
-      Doa dan kehadiran Anda merupakan hadiah terindah bagi kami.
-      Jika ingin memberikan tanda kasih, dapat melalui rekening berikut.
-    </p>
-
-    <div class="rekening-card">
-      <div class="rekening-bank mandiri">MANDIRI</div>
-      <p class="rekening-nama">ARIEFRAIM GINTING</p>
-      <p class="rekening-nomor" id="nomorMandiri">
-        1310019025321
-      </p>
-      <button class="rekening-copy"
-        onclick="salinRekening('1310019025321')">
-        Salin Nomor Rekening
-      </button>
-    </div>
-
-    <div class="rekening-card">
-      <div class="rekening-bank bni">BNI</div>
-      <p class="rekening-nama">Gina Sonia</p>
-      <p class="rekening-nomor" id="nomorBNI">
-        0804234946
-      </p>
-      <button class="rekening-copy"
-        onclick="salinRekening('0804234946')">
-        Salin Nomor Rekening
-      </button>
-    </div>
-  </div>
-</section>  
-
-    <!-- KONFIRMASI -->
-    <section class="section rsvp reveal">
-      <p class="kicker">We Hope You Can Join Us</p>
-      <h2>Konfirmasi Kehadiran</h2>
-      <p>Doa dan kehadiran Anda merupakan kebahagiaan bagi kami.</p>
-      <a class="btn light" id="rsvpButton" href="#" target="_blank" rel="noopener">
-        Konfirmasi via WhatsApp
-      </a>
-      <p style="font:11px Arial,sans-serif">
-        Nomor WhatsApp perlu diisi sebelum tombol ini digunakan.
-      </p>
-    </section>
-
-    <footer>
-      <div class="ornament">❦ ✧ ❦</div>
-      <p>Terima kasih atas doa dan restu yang diberikan.</p>
-      <h2 style="font-size:28px">Ari & Gina</h2>
-      <p style="font-size:12px">7 November 2026</p>
-    </footer>
-
-  </div>
-</main>
-
-<!-- TOMBOL MUSIK -->
-<button class="music-btn" id="musicButton" aria-label="Putar musik" title="Musik">♫</button>
-
-<!--
-  Ganti musik.mp3 dengan file musik milik Anda.
-  Unggah file musik ke repository yang sama.
-  Musik mulai setelah tombol musik ditekan karena aturan browser.
--->
-<audio id="bgMusic" loop preload="none">
-  <source src="musik.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-  const openButton = document.getElementById("openInvite");
-  const invitation = document.getElementById("invitation");
-  const musicButton = document.getElementById("musicButton");
-  const music = document.getElementById("bgMusic");
-
-  openButton.addEventListener("click", () => {
-    invitation.hidden = false;
-    document.getElementById("invitation").scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
-    startHearts();
-    observeSections();
-  });
-
-  musicButton.addEventListener("click", async () => {
-    if (music.paused) {
-      try {
-        await music.play();
-        musicButton.classList.add("playing");
-        musicButton.textContent = "♫";
-      } catch (error) {
-        alert("Musik belum tersedia. Unggah file musik.mp3 ke repository GitHub terlebih dahulu.");
-      }
-    } else {
-      music.pause();
-      musicButton.classList.remove("playing");
-    }
-  });
-
-  // Hitung mundur ke tanggal resepsi.
-  // Jam acara belum ditentukan, jadi hitungan diarahkan ke tengah malam.
-  const eventDate = new Date("2026-11-07T00:00:00+07:00").getTime();
-
-  function updateCountdown() {
-    const distance = eventDate - Date.now();
-
-    if (distance <= 0) {
-      document.getElementById("countdown").innerHTML =
-        "<p>Hari bahagia kami telah tiba. Terima kasih!</p>";
-      return;
-    }
-
-    document.getElementById("days").textContent =
-      Math.floor(distance / 86400000);
-    document.getElementById("hours").textContent =
-      Math.floor((distance % 86400000) / 3600000);
-    document.getElementById("minutes").textContent =
-      Math.floor((distance % 3600000) / 60000);
-    document.getElementById("seconds").textContent =
-      Math.floor((distance % 60000) / 1000);
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
   }
-
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-
-  // Animasi saat bagian halaman muncul.
-  let observer;
-
-  function observeSections() {
-    if (!("IntersectionObserver" in window)) {
-      document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
-      return;
-    }
-
-    if (observer) observer.disconnect();
-
-    observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll(".reveal:not(.visible)").forEach(el => {
-      observer.observe(el);
-    });
-  }
-
-  // Hiasan hati kecil saat undangan dibuka.
-  let heartsStarted = false;
-
-  function startHearts() {
-    if (heartsStarted) return;
-    heartsStarted = true;
-
-    setInterval(() => {
-      const heart = document.createElement("span");
-      heart.className = "heart";
-      heart.textContent = Math.random() > 0.5 ? "♥" : "✧";
-      heart.style.setProperty("--left", Math.random() * 95 + "%");
-      heart.style.fontSize = (12 + Math.random() * 13) + "px";
-      document.getElementById("invitation").appendChild(heart);
-      setTimeout(() => heart.remove(), 5000);
-    }, 1100);
-  }
-
-  // Ganti 628xxxxxxxxxx dengan nomor WhatsApp tujuan.
-  const whatsappNumber = "628xxxxxxxxxx";
-  const rsvpText = "Halo, saya ingin konfirmasi kehadiran di resepsi Ari dan Gina tanggal 7 November 2026.";
-  const rsvpButton = document.getElementById("rsvpButton");
-
-  rsvpButton.addEventListener("click", event => {
-    if (!/^62\d{8,15}$/.test(whatsappNumber)) {
-      event.preventDefault();
-      alert("Nomor WhatsApp belum diatur. Edit variabel whatsappNumber di index.html.");
-      return;
-    }
-    rsvpButton.href =
-      "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(rsvpText);
-  });
-</script><script>
-function salinRekening(nomor) {
-  if (navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(nomor)
-      .then(function() {
-        alert("Nomor rekening berhasil disalin: " + nomor);
-      })
-      .catch(function() {
-        salinManual(nomor);
-      });
-  } else {
-    salinManual(nomor);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-function salinManual(nomor) {
-  var area = document.createElement("textarea");
-  area.value = nomor;
-  area.style.position = "fixed";
-  area.style.opacity = "0";
-  document.body.appendChild(area);
-  area.select();
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 
-  try {
-    document.execCommand("copy");
-    alert("Nomor rekening berhasil disalin: " + nomor);
-  } catch (e) {
-    alert("Silakan salin nomor rekening ini: " + nomor);
+@keyframes floatUp {
+  from {
+    transform: translateY(0) rotate(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: .8;
+  }
+  to {
+    transform: translateY(-90vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* TAMPILAN HP */
+@media (max-width: 480px) {
+  .cover {
+    padding: 38px 27px;
   }
 
-  document.body.removeChild(area);
+  .cover-inner {
+    padding: 25px 12px;
+  }
+
+  .karo-border {
+    width: 20px;
+  }
+
+  .section {
+    padding: 50px 18px;
+  }
+
+  .rekening-section {
+    padding: 50px 18px;
+  }
+
+  .rekening-nomor {
+    font-size: 20px;
+  }
 }
-</script>
-</body>
-</html>
+
+/* AKSESIBILITAS */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
